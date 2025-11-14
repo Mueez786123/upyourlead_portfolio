@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! | Mueezur Rehman</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Same CSS variables as index.html */
+        :root {
+            --primary: #3b82f6;
+            --accent: #8b5cf6;
+            --darker: #020617;
+            --light: #f8fafc;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--darker);
+            color: var(--light);
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+        .hero-pattern {
+            background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+
+    <div class="min-h-screen flex items-center justify-center relative overflow-hidden hero-pattern p-4">
+        <div class="container mx-auto px-4 md:px-6 relative z-10 text-center">
+            
+            <div class="max-w-2xl mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-green-400 mx-auto mb-6" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Thank You!</h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-10">
+                    Aapki audit request mil gayi hai. Main jald se jald aapko aapke email par 5-minute ka video audit bhej doonga (24 ghante ke andar).
+                </p>
+                
+                <a href="/" class="btn-primary">
+                    ← Go Back to Homepage
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

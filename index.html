@@ -372,6 +372,34 @@
                 font-size: 0.9rem;
             }
         }
+        /* --- CSS FOR PARTICLE & GRADIENT ANIMATION --- */
+#hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Content ke peeche */
+}
+
+.text-gradient-animated {
+    background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGradient 3s linear infinite;
+}
+
+@keyframes textGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* --- END OF NEW CSS --- */
+
+        
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100">
@@ -412,38 +440,48 @@
     
     <div class="menu-overlay" id="menu-overlay"></div>
 
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden hero-pattern pt-16">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0 reveal">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Mueezur Rehman</h1>
-                    <p class="text-lg md:text-xl text-slate-300 mb-6">Founder, upyourlead.com | B2B Systems Architect & Full-Stack Specialist</p>
-                    <p class="text-base md:text-lg text-slate-400 mb-8 max-w-lg">I architect critical B2B lead-generation infrastructure that transforms messy data into clean, revenue-producing assets.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="btn-primary">View My Work</a>
-                        <a href="#contact" class="glass px-4 md:px-6 py-3 rounded-full hover:bg-slate-800 transition-colors text-sm md:text-base">Get Free Audit</a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center reveal">
-                    <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 blur-3xl absolute -top-10 -right-10"></div>
-                        
-                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 overflow-hidden shadow-2xl border border-white/10">
-                            <img src="photo.jpg" alt="Mueezur Rehman - B2B Systems Architect" class="w-full h-full object-cover">
-                        </div>
-                        </div>
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden hero-pattern pt-24 pb-16">
+    
+    <canvas id="hero-particles" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+    
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+            
+            <div class="md:w-1/2 mb-10 md:mb-0 reveal text-center md:text-left">
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gradient-animated">
+                    Mueezur Rehman
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-300 mb-6">Founder, upyourlead.com | B2B Systems Architect & Full-Stack Specialist</p>
+                <p class="text-base md:text-lg text-slate-400 mb-8 max-w-lg mx-auto md:mx-0">I architect critical B2B lead-generation infrastructure that transforms messy data into clean, revenue-producing assets.</p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="#projects" class="btn-primary">View My Work</a>
+                    <a href="#contact" class="glass px-4 md:px-6 py-3 rounded-full hover:bg-slate-800 transition-colors text-sm md:text-base">Get Free Audit</a>
                 </div>
             </div>
+
+            <div class="md:w-1/2 flex justify-center reveal">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 blur-3xl absolute -top-4 -left-4"></div>
+                    
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white/10 relative z-10">
+                        <img src="photo.jpg" alt="Mueezur Rehman - B2B Systems Architect" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            
         </div>
-        
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-            <a href="#about" class="text-slate-400 hover:text-white animate-bounce">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-            </a>
-        </div>
-    </section>
+    </div>
+    
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
+        <a href="#about" class="text-slate-400 hover:text-white animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </a>
+    </div>
+</section>
 
     <section id="about" class="section">
         <div class="container mx-auto px-4 md:px-6">
@@ -776,7 +814,7 @@
                 <div class="reveal">
                     <div class="glass rounded-2xl p-6 md:p-8">
                         
-                        <form name="audit-form" id="audit-form" class="space-y-6" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <form name="audit-form" id="audit-form" class="space-y-6" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html">
                             
                             <input type="hidden" name="form-name" value="audit-form" />
                             <p class="hidden">
@@ -920,6 +958,149 @@
                 }
             });
         });
+
+        // --- 🌟🌟🌟 NEW PARTICLE ANIMATION SCRIPT 🌟🌟🌟 ---
+try {
+    const canvas = document.getElementById('hero-particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight; // Full viewport height
+
+    // Hero section ka height set karein (taaki canvas poora cover ho)
+    const heroSection = document.getElementById('home');
+    if (heroSection) {
+        canvas.height = heroSection.offsetHeight;
+    }
+    
+    let particlesArray = [];
+    const numberOfParticles = 70;
+    
+    // Mouse position
+    const mouse = {
+        x: null,
+        y: null,
+        radius: 120 // Interaction radius
+    };
+
+    window.addEventListener('mousemove', (event) => {
+        mouse.x = event.x;
+        mouse.y = event.y;
+    });
+    
+    // Particle class
+    class Particle {
+        constructor(x, y, directionX, directionY, size, color) {
+            this.x = x;
+            this.y = y;
+            this.directionX = directionX;
+            this.directionY = directionY;
+            this.size = size;
+            this.color = color;
+        }
+        
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+        
+        update() {
+            if (this.x > canvas.width || this.x < 0) {
+                this.directionX = -this.directionX;
+            }
+            if (this.y > canvas.height || this.y < 0) {
+                this.directionY = -this.directionY;
+            }
+
+            // Mouse interaction
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance < mouse.radius) {
+                this.x -= this.directionX * 3;
+                this.y -= this.directionY * 3;
+            } else {
+                this.x += this.directionX;
+                this.y += this.directionY;
+            }
+            
+            this.draw();
+        }
+    }
+    
+    // Create particles
+    function init() {
+        particlesArray = [];
+        for (let i = 0; i < numberOfParticles; i++) {
+            let size = (Math.random() * 2) + 1;
+            let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
+            let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
+            let directionX = (Math.random() * .4) - .2;
+            let directionY = (Math.random() * .4) - .2;
+            let color = 'rgba(59, 130, 246, 0.3)'; // Blue color
+            
+            particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+        }
+    }
+    
+    // Connect particles
+    function connect() {
+        let opacityValue = 1;
+        for (let a = 0; a < particlesArray.length; a++) {
+            for (let b = a; b < particlesArray.length; b++) {
+                let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                             + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                
+                if (distance < (canvas.width/7) * (canvas.height/7)) {
+                    opacityValue = 1 - (distance/20000);
+                    ctx.strokeStyle = `rgba(139, 92, 246, ${opacityValue * 0.2})`; // Accent color
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    // Animation loop
+    function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+        }
+        connect();
+    }
+    
+    // Resize event
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        if (heroSection) {
+            canvas.height = heroSection.offsetHeight;
+        } else {
+            canvas.height = window.innerHeight;
+        }
+        mouse.radius = 120;
+        init();
+    });
+    
+    // Mouse out event
+    window.addEventListener('mouseout', () => {
+        mouse.x = undefined;
+        mouse.y = undefined;
+    });
+
+    init();
+    animate();
+
+} catch (err) {
+    console.error("Hero particle script error: ", err);
+}
+// --- 🌟🌟🌟 END OF NEW SCRIPT 🌟🌟🌟 ---
     </script>
 </body>
 </html>
